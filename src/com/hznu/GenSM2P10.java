@@ -12,10 +12,7 @@ import org.bouncycastle.util.encoders.Base64;
 import org.bouncycastle.util.encoders.Hex;
 
 import java.io.IOException;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
-import java.security.Security;
+import java.security.*;
 
 /**
  * 生成SM2的证书请求码
@@ -75,9 +72,14 @@ public class GenSM2P10 {
 
         Security.addProvider(new BouncyCastleProvider());
 
-        String dn = "CN=3H043F4YAZ7C4E6_NULL, O=02, L=BJQ, ST=ZJ, C=CN";
-        String bp = Base64.toBase64String(Hex.decode(
-                "49e9d66d658919b2d528b23554e6c08e26bd7f87a42eda0fabd142150a3426fe55bbf3a504f4e0035657b3839f3953786568ba1a3ccf272363a9acf92343688b"));
+
+        String dn = "CN=3H02792PAG00088_NULL, O=02, L=BJQ, ST=ZJ, C=CN";
+//        String bp = Base64.toBase64String(Hex.decode(
+//                "49e9d66d658919b2d528b23554e6c08e26bd7f87a42eda0fabd142150a3426fe55bbf3a504f4e0035657b3839f3953786568ba1a3ccf272363a9acf92343688b"));
+
+        String key = "F08B1EA0F83CD48F66300E6CC08435AB02AB8A3EE59D3BFC70F5B4AFEF6EDC5597D3F3A0E98C58DA3817D31DC4DC6279F56E75A087E97A8EEF7F2FAB4135AF07";
+
+        String bp = Base64.toBase64String(Hex.decode(key));
 
         try {
             String p10 = genCRS(dn, bp);
