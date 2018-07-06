@@ -73,7 +73,7 @@ public class GenSM2P10 {
         Security.addProvider(new BouncyCastleProvider());
 
 
-        String dn = "CN=3H02792PAG00088_NULL, O=02, L=BJQ, ST=ZJ, C=CN";
+        String dn = "CN=2562144_NULL, O=02, L=BJQ, ST=ZJ, C=CN";
 //        String bp = Base64.toBase64String(Hex.decode(
 //                "49e9d66d658919b2d528b23554e6c08e26bd7f87a42eda0fabd142150a3426fe55bbf3a504f4e0035657b3839f3953786568ba1a3ccf272363a9acf92343688b"));
 
